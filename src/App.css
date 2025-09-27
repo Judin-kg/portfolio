@@ -1,38 +1,128 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* =============================
+   App Container & Background
+   ============================= */
+.app-container {
+  position: relative;
+  width: 100%;
   min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Full-page background video */
+.background-video {
+  position: fixed; /* stays behind everything */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* push video behind */
+}
+
+/* All content above video */
+.content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Optional: spacing for sections */
+section {
+  padding: 80px 20px;
+}
+
+/* =============================
+   Contact Popup Styles
+   ============================= */
+
+/* Overlay background */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 15, 15, 0.6); /* transparent dark */
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  z-index: 9999; /* make sure it's above EVERYTHING */
+  animation: fadeIn 0.3s ease;
+}
+
+/* Popup form */
+.popup-form {
+  background: rgba(255, 255, 255, 0.95); /* slightly transparent white */
+  padding: 30px;
+  border-radius: 15px;
+  width: 350px;
+  max-width: 90%;
+  position: relative;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease;
+}
+
+.popup-form h2 {
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 22px;
+  color: #111;
+}
+
+.popup-form input,
+.popup-form textarea {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  font-size: 14px;
+}
+
+.popup-form textarea {
+  height: 80px;
+  resize: none;
+}
+
+.popup-form button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background: #111;
   color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.popup-form button[type="submit"]:hover {
+  background: #333;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
+}
+
+/* =============================
+   Animations
+   ============================= */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }

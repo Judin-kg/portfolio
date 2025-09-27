@@ -1,0 +1,100 @@
+/* Footer base styles */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #000;
+  color: #fff;
+  flex-wrap: wrap;
+}
+
+/* Footer sections */
+.footer-left,
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Button base styles */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Download button */
+.download-btn {
+  background-color: #fff;
+  color: #000;
+}
+
+.download-btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* Contact button */
+.contact-btn {
+  background-color: #000000;
+  color: #fff;
+}
+
+.contact-btn:hover {
+  background-color: #1d1d1d;
+}
+
+/* Icon button */
+.icon-btn {
+  color: #fff;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+.icon-btn:hover {
+  color: #007bff;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .footer-left,
+  .footer-right {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 300px;
+    font-size: 16px;
+    padding: 10px 15px;
+  }
+
+  .icon-btn {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    font-size: 15px;
+    padding: 8px 12px;
+    max-width: 100%;
+  }
+
+  .icon-btn {
+    font-size: 16px;
+  }
+}

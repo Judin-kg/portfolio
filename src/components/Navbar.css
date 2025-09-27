@@ -1,0 +1,130 @@
+/* Navbar container */
+.navbar {
+  width: 100%;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+/* Logo animation */
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.logo span {
+  color: #ff6a00;
+  position: relative;
+}
+
+/* Light sweep animation */
+.logo::after, .logo span::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.3), rgba(255,255,255,0.7), rgba(255,255,255,0.3));
+  transform: skewX(-20deg);
+  animation: shine 2s infinite;
+}
+
+.logo span::after {
+  animation-delay: 0.5s;
+}
+
+@keyframes shine {
+  0% { left: -75%; }
+  50% { left: 100%; }
+  100% { left: 100%; }
+}
+
+/* Navbar links */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.navbar-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: #ff6a00;
+  transition: width 0.3s;
+}
+
+.navbar-links li a:hover::after {
+  width: 100%;
+}
+
+/* Contact button */
+.contact-btn {
+  padding: 8px 20px;
+  background: #100d0b;
+  border: #fff 2px solid;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 25px;
+  transition: background 0.3s;
+  white-space: nowrap;
+}
+
+.contact-btn:hover {
+  background: #ff8500;
+}
+
+/* Responsive navbar */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .navbar-right {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .contact-btn {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
+}
