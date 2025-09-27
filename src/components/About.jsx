@@ -19,9 +19,7 @@ export default function About() {
         </h3>
 
         {/* ✅ Contact route link */}
-        <Link to="/contact" className="contact-btn">
-          Contact
-        </Link>
+       
 
         <div className="social-icons">
           <a

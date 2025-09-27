@@ -5,13 +5,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
+  position: fixed; /* fixed on desktop */
   top: 0;
   background: rgba(0,0,0,0.6);
   backdrop-filter: blur(10px);
   z-index: 100;
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
+  transition: all 0.3s ease;
 }
 
 /* Logo animation */
@@ -29,7 +30,6 @@
   position: relative;
 }
 
-/* Light sweep animation */
 .logo::after, .logo span::after {
   content: "";
   position: absolute;
@@ -94,7 +94,7 @@
   text-decoration: none;
   font-weight: 500;
   border-radius: 25px;
-  transition: background 0.3s;
+  transition: all 0.3s;
   white-space: nowrap;
 }
 
@@ -108,6 +108,7 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 15px 20px;
+    position: static; /* remove fixed on mobile */
   }
 
   .navbar-links {
@@ -120,11 +121,15 @@
   .navbar-right {
     margin-top: 10px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .contact-btn {
-    display: inline-block;
-    width: 100%;
+    display: block;
+    width: 100%; /* full width on mobile */
     text-align: center;
+    margin-top: 10px;
   }
 }
