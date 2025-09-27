@@ -28,9 +28,7 @@ export default function Navbar() {
         <li><a href="#projects">Projects</a></li>
         <li><a href="#testimonials">Testimonials</a></li>
         <li className="mobile-contact">
-          <Link to="/contact" className="contact-btn">
-            Contact
-          </Link>
+          
         </li>
       </ul>
 
