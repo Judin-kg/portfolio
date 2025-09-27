@@ -1,10 +1,11 @@
+/* Navbar container */
 .navbar {
   width: 100%;
   padding: 15px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
+  position: fixed; /* fixed on desktop */
   top: 0;
   background: rgba(0,0,0,0.6);
   backdrop-filter: blur(10px);
@@ -97,8 +98,10 @@
     position: static; /* remove fixed on mobile */
   }
 
+  /* Show hamburger on mobile */
   .hamburger { display: flex; }
 
+  /* Navbar links hidden by default on mobile */
   .navbar-links {
     display: none;
     flex-direction: column;
@@ -107,11 +110,20 @@
     margin-top: 10px;
   }
 
+  /* Open state for mobile menu */
   .navbar-links.open { display: flex; }
 
+  /* Hide desktop contact button on mobile */
   .navbar-right { display: none; }
 
-  .contact-btn { width: 100%; text-align: center; margin-top: 10px; }
+  /* Mobile contact button - smaller size */
+  .contact-btn {
+    width: auto;          /* not full width */
+    padding: 6px 15px;    /* smaller padding */
+    font-size: 14px;      /* smaller font */
+    text-align: center;
+    margin-top: 10px;
+  }
 
   .mobile-contact { display: block; }
 }
