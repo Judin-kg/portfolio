@@ -18,8 +18,11 @@ export default function About() {
           Building modern web applications and AI solutions while delivering freelance projects with passion and precision
         </h3>
 
+
         {/* ✅ Contact route link */}
-       
+        <Link to="/contact" className="contact-btn">
+          Contact
+        </Link>
 
         <div className="social-icons">
           <a
