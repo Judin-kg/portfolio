@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-left">
         <a
-          href="./assets/Judin KG_20250928_215230_0000.pdf"
+          href="./components/assets/Judin_KG_Resume.pdf"
           download
           className="btn download-btn"
         >
